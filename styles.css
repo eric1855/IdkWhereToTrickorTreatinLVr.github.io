@@ -18,7 +18,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: #181818;
+    background-color: #C900FF;
     z-index: 10;
 }
 
@@ -47,8 +47,8 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
-    background-color: #000;
+    color: black;
+    background-color: #FF9A00;
 }
 
 .hero-content {
