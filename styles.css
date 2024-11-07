@@ -122,3 +122,10 @@ footer {
     font-style: normal;
   }
   
+  
+.funnel-display-name{
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
