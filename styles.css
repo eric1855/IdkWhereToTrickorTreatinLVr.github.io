@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    font-family: "Arial", sans-serif;
+    font-family: "Creepster", serif;
 }
 
 /* Navigation Bar */
@@ -21,8 +21,9 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: #C900FF;
+    background-color: #6b5b95;
     z-index: 10;
+    font-family: "Funnel Display", sans-serif;
 }
 
 .navbar .logo {
@@ -52,7 +53,7 @@ body {
     justify-content: center;
     text-align: center;
     color: black;
-    background-color: #FF9A00;
+    background-color: #ff7b25;
     width: 100%;
     padding: 20px; /* Add padding to create space */
 }
@@ -72,6 +73,7 @@ body {
     background-color: #f1f1f1;
     text-align: center;
     width: 100%;
+    font-family: "Funnel Display", sans-serif;
 }
 
 .features h2 {
@@ -92,6 +94,7 @@ body {
     background-color: #000;
     color: white;
     width: 100%;
+    font-family: "Funnel Display", sans-serif;
 }
 
 .about-content {
@@ -114,4 +117,19 @@ footer {
     text-align: center;
     background-color: #181818;
     color: white;
+    font-family: "Funnel Display", sans-serif;
 }
+
+.creepster-regular {
+    font-family: "Creepster", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+.funnel-display-name{
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
