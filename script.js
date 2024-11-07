@@ -1,6 +1,6 @@
 async function getCandyHaul(zipCode) {
-    // API URL with zip code as query parameter
-    const apiUrl = `https://iyielkzr51.execute-api.us-west-1.amazonaws.com?zip_code=${zipCode}`;
+    // Correct API URL with the stage and route path
+    const apiUrl = `https://iyielkzr51.execute-api.us-west-1.amazonaws.com/prod/candypredict?zip_code=${zipCode}`;
 
     try {
         // Send the request to the API Gateway
