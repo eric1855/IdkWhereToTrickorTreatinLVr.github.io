@@ -105,7 +105,7 @@ body {
 
 .about-item {
     width: 200px;
-    background-color: #181818;
+    background-color: #36486b;
     padding: 20px;
     font-size: 1.5rem;
     text-align: center;
@@ -115,7 +115,7 @@ body {
 footer {
     padding: 20px;
     text-align: center;
-    background-color: #36486b;
+    background-color: #181818;
     color: white;
     font-family: "Funnel Display", sans-serif;
 }
