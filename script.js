@@ -1,8 +1,7 @@
 // Function to get candy haul prediction based on the zip code
 async function getCandyHaul(zipCode) {
     // Replace 'your-api-id' with your actual API Gateway ID and 'region' with your region
-    const apiUrl = `https://your-api-id.execute-api.region.amazonaws.com/production/candy-haul?zip_code=${zipCode}`;
-    
+    const apiUrl = `https://iyielkzr51.execute-api.us-west-1.amazonaws.com/$default/candypredict?zip_code=${zipCode}`;
     // Show loading message while fetching data
     document.getElementById('candy-haul-result').innerText = "Loading...";
 
