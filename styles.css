@@ -73,6 +73,7 @@ body {
     background-color: #f1f1f1;
     text-align: center;
     width: 100%;
+    font-family: "Funnel Display", sans-serif;
 }
 
 .features h2 {
@@ -93,6 +94,7 @@ body {
     background-color: #000;
     color: white;
     width: 100%;
+    font-family: "Funnel Display", sans-serif;
 }
 
 .about-content {
@@ -115,6 +117,7 @@ footer {
     text-align: center;
     background-color: #181818;
     color: white;
+    font-family: "Funnel Display", sans-serif;
 }
 
 .creepster-regular {
