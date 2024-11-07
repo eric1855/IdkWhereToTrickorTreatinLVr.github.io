@@ -115,3 +115,10 @@ footer {
     background-color: #181818;
     color: white;
 }
+
+.creepster-regular {
+    font-family: "Creepster", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
