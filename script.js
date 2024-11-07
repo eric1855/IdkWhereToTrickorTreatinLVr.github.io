@@ -14,8 +14,11 @@ async function getCandyHaul(zipCode) {
         // Parse the JSON response
         const data = await response.json();
 
-        // Get the predicted candy haul from the response
-        const predictedHaul = data.prediction;
+        // The body field is stringified JSON, so parse it
+        const parsedBody = JSON.parse(data.body);
+
+        // Get the predicted candy haul from the parsed response
+        const predictedHaul = parsedBody.predicted_haul;
 
         // Display the predicted candy haul on the website
         document.getElementById('result').innerText = `Estimated Candy Haul: ${predictedHaul}`;
