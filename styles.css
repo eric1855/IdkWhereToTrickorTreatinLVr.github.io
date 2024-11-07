@@ -55,6 +55,7 @@ body {
     background-color: #ff7b25;
     width: 100%;
     padding: 20px; /* Add padding to create space */
+    font-family: "Funnel Display", sans-serif;
 }
 
 .hero h1 {
