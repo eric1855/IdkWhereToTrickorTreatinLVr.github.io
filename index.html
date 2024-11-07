@@ -28,11 +28,12 @@
         <section id="Map" class="features">
             <h2>Map of Las Vegas</h2>
             <div>
-                <form action="/action_page.php"></form>
+                <form id="zipcode-form">
                     <label for="zipcode">Zip code:</label>
-                    <input type="text" id="zipcode" name="zipcode"><br><br>
-                    <input type="submit" value="Submit">
-              </form>
+                    <input type="text" id="zipcode-input" name="zipcode" required /><br><br>
+                    <button type="submit">Submit</button>
+                </form>
+                <p id="result"></p> <!-- Display result here -->
             </div>
         </section>
 
