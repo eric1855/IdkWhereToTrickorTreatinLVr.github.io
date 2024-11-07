@@ -1,6 +1,6 @@
 async function getCandyHaul(zipCode) {
     // API URL with zip code as query parameter
-    const apiUrl = `https://your-api-id.execute-api.us-west-1.amazonaws.com/stageone/haul?zip_code=${zipCode}`;
+    const apiUrl = `https://nonmdwp4vf.execute-api.us-west-1.amazonaws.com/stageone/haul?zip_code=${zipCode}`;
 
     try {
         // Send the request to the API Gateway
