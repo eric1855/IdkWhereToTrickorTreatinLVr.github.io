@@ -1,6 +1,6 @@
 async function getCandyHaul(zipCode) {
-    // Correct API URL with the stage and route path
-    const apiUrl = `https://iyielkzr51.execute-api.us-west-1.amazonaws.com/prod/candypredict?zip_code=${zipCode}`;
+    // API URL with zip code as query parameter
+    const apiUrl = `https://iyielkzr51.execute-api.us-west-1.amazonaws.com/candypredict?zip_code=${zipCode}`;
 
     try {
         // Send the request to the API Gateway
@@ -14,8 +14,11 @@ async function getCandyHaul(zipCode) {
         // Parse the JSON response
         const data = await response.json();
 
-        // Get the predicted candy haul from the response
-        const predictedHaul = data.predicted_haul;
+        // The body is a stringified JSON, so parse it again
+        const parsedBody = JSON.parse(data.body);
+
+        // Get the predicted candy haul from the parsed response
+        const predictedHaul = parsedBody.predicted_haul;
 
         // Display the predicted candy haul on the website
         document.getElementById('result').innerText = `Estimated Candy Haul: ${predictedHaul}`;
@@ -24,6 +27,7 @@ async function getCandyHaul(zipCode) {
         document.getElementById('result').innerText = `Error: ${error.message}`;
     }
 }
+
 
 // Event listener for form submission
 document.getElementById('zipcode-form').addEventListener('submit', async (event) => {
