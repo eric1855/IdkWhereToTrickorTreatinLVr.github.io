@@ -91,7 +91,7 @@ body {
 /* About Section (We are) */
 .about {
     padding: 100px 20px; /* Add padding on left and right */
-    background-color: #000;
+    background-color: #36486b;
     color: white;
     width: 100%;
     font-family: "Funnel Display", sans-serif;
@@ -105,7 +105,7 @@ body {
 
 .about-item {
     width: 200px;
-    background-color: #36486b;
+    background-color: #181818;
     padding: 20px;
     font-size: 1.5rem;
     text-align: center;
