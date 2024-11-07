@@ -3,13 +3,27 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>LVcandyPredictor - Home</title>
+        <title>hackoween - Home</title>
         <link rel="stylesheet" href="styles.css" />
+        <style>
+            /* Remove horizontal scroll */
+            body {
+                overflow-x: hidden;
+            }
+
+            /* Optional styling for the image */
+            .map-image {
+                width: 100%; /* Make the image responsive */
+                max-width: 800px; /* Set a max-width for large screens */
+                display: block;
+                margin: 0 auto; /* Center the image */
+            }
+        </style>
     </head>
     <body>
         <!-- Fixed Navigation Bar -->
         <nav class="navbar">
-            <div class="logo">LVcandyPredictor</div>
+            <div class="logo">Candy Haul Predictor</div>
             <ul class="nav-links">
                 <li><a href="#hello">Home</a></li>
                 <li><a href="#Map">Map</a></li>
@@ -20,35 +34,36 @@
         <!-- Hero Section (Hello) -->
         <section id="hello" class="hero">
             <div class="hero-content">
-                <h1>Welcome to LVcandyPredictor</h1>
+                <h1>How much candy will you get?</h1>
+                <!-- Zip code form and result moved under the title -->
+                <form id="zipcode-form">
+                    <label for="zipcode-input">Zip code:</label>
+                    <input type="text" id="zipcode-input" name="zipcode" required />
+                    <button type="submit">Submit</button>
+                </form>
+                <p id="result"></p> <!-- Display result here -->
             </div>
         </section>
 
-        <!-- Features Section (You are) -->
+        <!-- Features Section (Map) -->
         <section id="Map" class="features">
             <h2>Map of Las Vegas</h2>
-            <div>
-                <form action="/action_page.php"></form>
-                    <label for="zipcode">Zip code:</label>
-                    <input type="text" id="zipcode" name="zipcode"><br><br>
-                    <input type="submit" value="Submit">
-              </form>
-            </div>
+            <!-- Add your image below the heading -->
+            <img src="https://raw.githubusercontent.com/eric1855/IdkWhereToTrickorTreatinLVr.github.io/refs/heads/main/Desirability%20Index.png" alt="Desirability Index" class="map-image" />
         </section>
 
-        <!-- About Section (We are) with horizontal scrolling -->
+        <!-- About Section (We are) -->
         <section id="we-are" class="about">
-            <h2>We Are LVcandyPredictor</h2>
             <div class="about-content">
-                <div class="about-item">Creative</div>
-                <div class="about-item">Innovative</div>
-                <div class="about-item">Music Enthusiasts</div>
+                <div class="about-item">Eric</div>
+                <div class="about-item">Aileen</div>
+                <div class="about-item">Jackson</div>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2024 LVcandyPredictor. All rights reserved.</p>
+            <p>&copy; 2024 Hackoween. All rights reserved.</p>
         </footer>
 
         <script src="script.js"></script>
