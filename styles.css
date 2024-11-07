@@ -57,6 +57,11 @@ body {
 
 .hero h1 {
     font-size: 4rem;
+    margin-bottom: 30px; /* Adds space between the title and the form */
+}
+
+.hero form {
+    margin-top: 20px; /* Adds space above the form */
 }
 
 .hero p {
@@ -80,7 +85,7 @@ body {
     opacity: 0.5;
 }
 
-/* Features Section (You are) */
+/* Features Section (Map) */
 .features {
     padding: 100px;
     background-color: #f1f1f1;
@@ -92,27 +97,11 @@ body {
     margin-bottom: 50px;
 }
 
-.folders {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.folder {
-    width: 200px;
-    height: 150px;
-    background-color: #181818;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.folder:hover {
-    transform: scale(1.1);
+.features img {
+    width: 100%;
+    max-width: 800px; /* Maximum width of the image */
+    margin: 20px 0; /* Space around the image */
+    border-radius: 8px; /* Optional: Adds rounded corners */
 }
 
 /* About Section (We are) */
