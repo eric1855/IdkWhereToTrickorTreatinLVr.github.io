@@ -1,49 +1,37 @@
-// Function to get candy haul prediction based on the zip code
 async function getCandyHaul(zipCode) {
-    // Replace 'your-api-id' with your actual API Gateway ID and 'region' with your region
-    const apiUrl = `https://iyielkzr51.execute-api.us-west-1.amazonaws.com/$default/candypredict?zip_code=${zipCode}`;
-    // Show loading message while fetching data
-    document.getElementById('candy-haul-result').innerText = "Loading...";
+    // API URL with zip code as query parameter
+    const apiUrl = `https://iyielkzr51.execute-api.us-west-1.amazonaws.com/prod/candypredict?zip_code=${zipCode}`;
 
     try {
-        // Fetch response from API Gateway
+        // Send the request to the API Gateway
         const response = await fetch(apiUrl);
-
-        if (!response.ok) {
-            // Handle error if API request fails
-            document.getElementById('candy-haul-result').innerText = "Error fetching data.";
-            return;
-        }
-
-        // Parse the response data
-        const data = await response.json();
         
-        // Display the predicted candy haul on the website
-        if (data.predicted_haul) {
-            document.getElementById('candy-haul-result').innerText = `Estimated Candy Haul: ${data.predicted_haul}`;
-        } else {
-            document.getElementById('candy-haul-result').innerText = "No data found for this zip code.";
+        // Check if the response is successful
+        if (!response.ok) {
+            throw new Error('Failed to fetch data from API');
         }
+
+        // Parse the JSON response
+        const data = await response.json();
+
+        // Get the predicted candy haul from the response
+        const predictedHaul = data.predicted_haul;
+
+        // Display the predicted candy haul on the website
+        document.getElementById('result').innerText = `Estimated Candy Haul: ${predictedHaul}`;
     } catch (error) {
-        // Handle any errors during the fetch
-        console.error('Error:', error);
-        document.getElementById('candy-haul-result').innerText = "Error fetching data.";
+        // Handle errors, display a message
+        document.getElementById('result').innerText = `Error: ${error.message}`;
     }
 }
 
 // Event listener for form submission
-document.getElementById('submit-button').addEventListener('click', async (event) => {
-    event.preventDefault();  // Prevent the default form submission
+document.getElementById('zipcode-form').addEventListener('submit', async (event) => {
+    event.preventDefault();  // Prevent the form from submitting normally
 
-    // Get zip code from the input field
-    const zipCode = document.getElementById('zipcode').value.trim();
+    // Get the zip code entered by the user
+    const zipCode = document.getElementById('zipcode-input').value;
 
-    // Validate the zip code before calling the API
-    if (!zipCode || zipCode.length !== 5 || isNaN(zipCode)) {
-        document.getElementById('candy-haul-result').innerText = "Please enter a valid 5-digit zip code.";
-        return;
-    }
-
-    // Fetch and display the candy haul prediction
+    // Call the function to get the candy haul prediction
     await getCandyHaul(zipCode);
 });
