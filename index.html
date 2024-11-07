@@ -5,6 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>hackoween - Home</title>
         <link rel="stylesheet" href="styles.css" />
+        <style>
+            /* Remove horizontal scroll */
+            body {
+                overflow-x: hidden;
+            }
+        </style>
     </head>
     <body>
         <!-- Fixed Navigation Bar -->
@@ -21,14 +27,7 @@
         <section id="hello" class="hero">
             <div class="hero-content">
                 <h1>How much candy will you get?</h1>
-            </div>
-        </section>
-
-        <!-- Features Section (Zip code form and response) -->
-        <section id="Map" class="features">
-            <h2>Map of Las Vegas</h2>
-            <div>
-                <!-- Zip code form and result -->
+                <!-- Zip code form and result moved under the title -->
                 <form id="zipcode-form">
                     <label for="zipcode-input">Zip code:</label>
                     <input type="text" id="zipcode-input" name="zipcode" required />
@@ -38,7 +37,12 @@
             </div>
         </section>
 
-        <!-- About Section (We are) with horizontal scrolling -->
+        <!-- Features Section (Map) -->
+        <section id="Map" class="features">
+            <h2>Map of Las Vegas</h2>
+        </section>
+
+        <!-- About Section (We are) -->
         <section id="we-are" class="about">
             <div class="about-content">
                 <div class="about-item">Eric</div>
