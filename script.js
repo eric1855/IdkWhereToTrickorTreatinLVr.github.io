@@ -1,11 +1,11 @@
 async function getCandyHaul(zipCode) {
     // API URL with zip code as query parameter
-    const apiUrl = `https://iyielkzr51.execute-api.us-west-1.amazonaws.com/candypredict?zip_code=${zipCode}`;
+    const apiUrl = `https://nonmdwp4vf.execute-api.us-west-1.amazonaws.com/stageone/haul?zipCode=${zipCode}`;
 
     try {
-        // Send the request to the API Gateway
+        // Send the GET request to the API Gateway
         const response = await fetch(apiUrl);
-        
+
         // Check if the response is successful
         if (!response.ok) {
             throw new Error('Failed to fetch data from API');
@@ -14,20 +14,16 @@ async function getCandyHaul(zipCode) {
         // Parse the JSON response
         const data = await response.json();
 
-        // The body is a stringified JSON, so parse it again
-        const parsedBody = JSON.parse(data.body);
-
-        // Get the predicted candy haul from the parsed response
-        const predictedHaul = parsedBody.predicted_haul;
+        // Get the predicted candy haul from the response
+        const predictedHaul = data.prediction;
 
         // Display the predicted candy haul on the website
         document.getElementById('result').innerText = `Estimated Candy Haul: ${predictedHaul}`;
     } catch (error) {
-        // Handle errors, display a message
+        // Handle errors and display a message
         document.getElementById('result').innerText = `Error: ${error.message}`;
     }
 }
-
 
 // Event listener for form submission
 document.getElementById('zipcode-form').addEventListener('submit', async (event) => {
