@@ -39,14 +39,37 @@ async function getCandyHaul(zipCode, startTime, endTime) {
                 totalCandy += amount;
             }
 
-            // Create a string to display the candy breakdown
-            let candyDisplay = "Estimated Candy Haul:\n";
-            for (const [candy, amount] of Object.entries(predictedHaul)) {
-                candyDisplay += `${candy}: ${amount}\n`;
-            }
+            // Split the candy items into two columns
+            const candyItems = Object.entries(predictedHaul);
+            const halfLength = Math.ceil(candyItems.length / 2);
+            const firstColumn = candyItems.slice(0, halfLength);
+            const secondColumn = candyItems.slice(halfLength);
 
-            // Display the candy haul breakdown and the total candy on the website
-            document.getElementById('result').innerText = candyDisplay;
+            // Create HTML elements for displaying the candy haul in two columns
+            const candyListContainer = document.getElementById('result');
+            candyListContainer.innerHTML = ""; // Clear previous content
+
+            const firstColumnList = document.createElement('div');
+            firstColumnList.classList.add('candy-column');
+            firstColumn.forEach(([candy, amount]) => {
+                const candyItem = document.createElement('div');
+                candyItem.classList.add('candy-item');
+                candyItem.innerText = `${candy}: ${amount}`;
+                firstColumnList.appendChild(candyItem);
+            });
+
+            const secondColumnList = document.createElement('div');
+            secondColumnList.classList.add('candy-column');
+            secondColumn.forEach(([candy, amount]) => {
+                const candyItem = document.createElement('div');
+                candyItem.classList.add('candy-item');
+                candyItem.innerText = `${candy}: ${amount}`;
+                secondColumnList.appendChild(candyItem);
+            });
+
+            // Append both columns to the result container
+            candyListContainer.appendChild(firstColumnList);
+            candyListContainer.appendChild(secondColumnList);
 
             // Display the total candy amount
             document.getElementById('total-candy').innerText = `Total Candy: ${totalCandy}`;
