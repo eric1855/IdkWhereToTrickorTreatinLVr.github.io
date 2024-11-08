@@ -52,10 +52,12 @@ async function getCandyHaul(zipCode, startTime, endTime) {
         } else if (data.error) {
             // Handle specific API error responses
             document.getElementById('result').innerText = `Error: ${data.error}`;
+            document.getElementById('total-candy').innerText = '';
         }
     } catch (error) {
         // Handle any unexpected errors
         document.getElementById('result').innerText = `Error: ${error.message}`;
+        document.getElementById('total-candy').innerText = '';
     }
 }
 
@@ -71,6 +73,7 @@ document.getElementById('zipcode-form').addEventListener('submit', async (event)
     // Check if all fields are filled out
     if (!zipCode || !startTime || !endTime) {
         document.getElementById('result').innerText = 'Error: All fields are required';
+        document.getElementById('total-candy').innerText = '';
         return;
     }
 
