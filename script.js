@@ -14,7 +14,7 @@ async function getCandyHaul(zipCode, startTime, endTime) {
     const endTime12hr = convertTo12HourFormat(endTime);
 
     // API URL with zip code, start time, and end time as query parameters
-    const apiUrl = `https://nonmdwp4vf.execute-api.us-west-1.amazonaws.com/stageone/haul?zip_code=${zipCode}&start_time=${"3:00 PM"}&end_time=${"5:00 PM"}`;
+    const apiUrl = `https://nonmdwp4vf.execute-api.us-west-1.amazonaws.com/stageone/haul?zip_code=${zipCode}&start_time=${"3:00PM"}&end_time=${"5:00PM"}`;
 
     try {
         // Send the request to the API Gateway
