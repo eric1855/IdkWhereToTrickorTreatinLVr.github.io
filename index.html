@@ -1,113 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>hackoween - Home</title>
-        <link rel="stylesheet" href="styles.css" />
-        <style>
-            /* Remove horizontal scroll */
-            body {
-                overflow-x: hidden;
-            }
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hackoween - Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Remove horizontal scroll */
+        body {
+            overflow-x: hidden;
+        }
 
-            /* Optional styling for the image */
-            .map-image {
-                width: 100%; /* Make the image responsive */
-                max-width: 800px; /* Set a max-width for large screens */
-                display: block;
-                margin: 0 auto; /* Center the image */
-            }
+        /* Optional styling for the image */
+        .map-image {
+            width: 100%; /* Make the image responsive */
+            max-width: 800px; /* Set a max-width for large screens */
+            display: block;
+            margin: 0 auto; /* Center the image */
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Candy Haul Predictor</div>
+        <ul class="nav-links">
+            <li><a href="#hello">Home</a></li>
+            <li><a href="#Map">Map</a></li>
+            <li><a href="#we-are">We Are</a></li>
+        </ul>
+    </nav>
 
-            /* Style for the candy haul breakdown */
-            .candy-haul {
-                font-family: 'Creepster', cursive;
-                font-size: 18px;
-                margin-top: 20px;
-                line-height: 1.5;
-            }
-
-            .candy-haul h2 {
-                font-size: 22px;
-                margin-bottom: 10px;
-            }
-
-            .candy-haul ul {
-                list-style-type: none;
-                padding-left: 0;
-            }
-
-            .candy-haul li {
-                font-size: 18px;
-                margin: 5px 0;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Fixed Navigation Bar -->
-        <nav class="navbar">
-            <div class="logo">Candy Haul Predictor</div>
-            <ul class="nav-links">
-                <li><a href="#hello">Home</a></li>
-                <li><a href="#Map">Map</a></li>
-                <li><a href="#we-are">We Are</a></li>
-            </ul>
-        </nav>
-
-        <!-- Hero Section (Hello) -->
-        <section id="hello" class="hero">
-            <div class="hero-content">
-                <h1>How much candy will you get?</h1>
-                <!-- Zip code form and result moved under the title -->
-                <form id="zipcode-form">
-                    <label for="zipcode-input">Zip code:</label>
-                    <input type="text" id="zipcode-input" name="zipcode" required />
-                    
-                    <label for="start-time">Start Time:</label>
-                    <input type="time" id="start-time" required />
-                    
-                    <label for="end-time">End Time:</label>
-                    <input type="time" id="end-time" required />
-                    
-                    <button type="submit">Submit</button>
-                </form>
+    <!-- Hero Section (Hello) -->
+    <section id="hello" class="hero">
+        <div class="hero-content">
+            <h1>How much candy will you get?</h1>
+            <!-- Zip code form and result moved under the title -->
+            <form id="zipcode-form">
+                <label for="zipcode-input">Zip code:</label>
+                <input type="text" id="zipcode-input" name="zipcode" required />
                 
-                <p id="result"></p> <!-- Display result here -->
+                <label for="start-time">Start Time:</label>
+                <input type="time" id="start-time" required />
                 
-                <!-- Section for displaying detailed candy haul -->
-                <div id="candy-haul" class="candy-haul">
-                    <!-- This will be populated dynamically -->
-                </div>
-            </div>
-        </section>
+                <label for="end-time">End Time:</label>
+                <input type="time" id="end-time" required />
+                
+                <button type="submit">Submit</button>
+            </form>
+            <p id="result"></p> <!-- Display result here -->
+            <p id="total-candy"></p> <!-- Display total candy here -->
+        </div>
+    </section>
 
-        <!-- Features Section (Map) -->
-        <section id="Map" class="features">
-            <h2>Trick or Treat Desirability Map</h2>
-            <!-- Add your image below the heading -->
-            <img src="https://raw.githubusercontent.com/eric1855/IdkWhereToTrickorTreatinLVr.github.io/refs/heads/main/Desirability%20Index.png" alt="Desirability Index" class="map-image" />
-        </section>
+    <!-- Features Section (Map) -->
+    <section id="Map" class="features">
+        <h2>Trick or Treat Desirability Map</h2>
+        <!-- Add your image below the heading -->
+        <img src="https://raw.githubusercontent.com/eric1855/IdkWhereToTrickorTreatinLVr.github.io/refs/heads/main/Desirability%20Index.png" alt="Desirability Index" class="map-image" />
+    </section>
 
-        <!-- About Section (We are) -->
-        <section id="we-are" class="about">
-            <div class="about-content">
-                <div class="about-item">Eric</div>
-                <div class="about-item">Aileen</div>
-                <div class="about-item">Jackson</div>
-            </div>
-        </section>
+    <!-- About Section (We are) -->
+    <section id="we-are" class="about">
+        <div class="about-content">
+            <div class="about-item">Eric</div>
+            <div class="about-item">Aileen</div>
+            <div class="about-item">Jackson</div>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Hackoween. All rights reserved.</p>
-        </footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hackoween. All rights reserved.</p>
+    </footer>
 
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
