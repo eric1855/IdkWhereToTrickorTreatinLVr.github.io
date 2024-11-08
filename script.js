@@ -22,7 +22,8 @@ async function getCandyHaul(zipCode, startTime, endTime) {
 
         // Check if the response is successful
         if (!response.ok) {
-            throw new Error('Failed to fetch data from API');
+            // If the response is not ok, throw an error including the status code
+            throw new Error(`Error ${response.status}: Failed to fetch data from API`);
         }
 
         // Parse the JSON response
@@ -50,12 +51,12 @@ async function getCandyHaul(zipCode, startTime, endTime) {
             // Display the total candy amount
             document.getElementById('total-candy').innerText = `Total Candy: ${totalCandy}`;
         } else if (data.error) {
-            // Display error code and message from the API
+            // Display error code and message from the API if data.error is present
             document.getElementById('result').innerText = `Error ${response.status}: ${data.error}`;
             document.getElementById('total-candy').innerText = '';
         }
     } catch (error) {
-        // Handle any unexpected errors
+        // Handle any unexpected errors (e.g., network issues or other issues)
         document.getElementById('result').innerText = `Error: ${error.message}`;
         document.getElementById('total-candy').innerText = '';
     }
