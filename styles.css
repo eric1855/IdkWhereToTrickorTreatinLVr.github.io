@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-    font-family: "Creepster", serif;
+    font-family: "Creepster", serif; /* Default font for body text */
 }
 
 /* Navigation Bar */
@@ -23,7 +23,7 @@ body {
     padding: 20px;
     background-color: #6b5b95;
     z-index: 10;
-    font-family: "Funnel Display", sans-serif;
+    font-family: "Funnel Display", sans-serif; /* Font for navbar */
 }
 
 .navbar .logo {
@@ -41,6 +41,7 @@ body {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    font-family: "Funnel Display", sans-serif; /* Font for nav links */
 }
 
 /* Hero Section */
@@ -59,6 +60,7 @@ body {
 }
 
 .hero h1 {
+    font-family: "Creepster", serif; /* Font for main title */
     font-size: 4rem;
     margin-bottom: 20px; /* Add space below title */
 }
@@ -67,69 +69,75 @@ body {
     margin-top: 20px; /* Space between title and form */
 }
 
-/* Features Section (Map) */
-.features {
-    padding: 100px 20px; /* Add horizontal padding */
-    background-color: #f4e1d2;
-    text-align: center;
+/* New Styles for Zip Code, User Input, and Results Display */
+.hero form input, .hero form button {
+    font-family: "Funnel Display", sans-serif; /* Font for input fields and button */
+    font-size: 1.5rem; /* Bigger font size for better visibility */
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.hero form input {
     width: 100%;
-    font-family: "Funnel Display", sans-serif;
+    max-width: 300px;
 }
 
-.features h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.map-image {
-    width: 100%;
-    max-width: 800px;
-    display: block;
-    margin: 20px auto; /* Center the image */
-}
-
-/* About Section (We are) */
-.about {
-    padding: 100px 20px; /* Add padding on left and right */
-    background-color: #36486b;
+.hero form button {
+    background-color: #4CAF50;
     color: white;
+    border: none;
+    cursor: pointer;
     width: 100%;
-    font-family: "Funnel Display", sans-serif;
+    max-width: 300px;
 }
 
-.about-content {
+.hero form button:hover {
+    background-color: #45a049;
+}
+
+/* Display Results */
+#result, #total-candy {
+    font-family: Arial, sans-serif; /* Font for result text */
+    font-size: 2rem; /* Bigger font size for results */
+    margin-top: 20px;
+    color: white;
+}
+
+/* Candy list split into two columns */
+.candy-list {
     display: flex;
-    gap: 30px;
-    justify-content: center;
+    flex-wrap: wrap;  /* Allow items to wrap onto the next line */
+    justify-content: space-between;  /* Space between the columns */
+    gap: 20px;  /* Optional gap between columns */
+    margin-top: 20px;
 }
 
-.about-item {
-    width: 200px;
-    background-color: #1f293e;
-    padding: 20px;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #1f293e;
-    color: white;
-    font-family: "Funnel Display", sans-serif;
+.candy-item {
+    flex: 1 0 45%;  /* Each item will take up 45% of the width */
+    box-sizing: border-box;
+    font-size: 18px;
+    text-align: left;
 }
 
 .creepster-regular {
     font-family: "Creepster", serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
-  
-.funnel-display-name{
+}
+
+.funnel-display-name {
     font-family: "Funnel Display", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-  }
+}
+
+/* Mobile Responsiveness - Stack the columns on small screens */
+@media (max-width: 768px) {
+    .candy-item {
+        flex: 1 0 100%;  /* Make items take up 100% width on small screens */
+    }
+    .candy-list {
+        justify-content: center;  /* Center the items for better alignment */
+    }
+}

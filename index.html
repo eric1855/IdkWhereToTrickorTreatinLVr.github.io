@@ -1,77 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>hackoween - Home</title>
-        <link rel="stylesheet" href="styles.css" />
-        <style>
-            /* Remove horizontal scroll */
-            body {
-                overflow-x: hidden;
-            }
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hackoween - Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Remove horizontal scroll */
+        body {
+            overflow-x: hidden;
+            font-family: 'Funnel Display', sans-serif;  /* Use the custom font */
+        }
 
-            /* Optional styling for the image */
-            .map-image {
-                width: 100%; /* Make the image responsive */
-                max-width: 800px; /* Set a max-width for large screens */
-                display: block;
-                margin: 0 auto; /* Center the image */
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Fixed Navigation Bar -->
-        <nav class="navbar">
-            <div class="logo">Candy Haul Predictor</div>
-            <ul class="nav-links">
-                <li><a href="#hello">Home</a></li>
-                <li><a href="#Map">Map</a></li>
-                <li><a href="#we-are">We Are</a></li>
-            </ul>
-        </nav>
+        /* Optional styling for the image */
+        .map-image {
+            width: 100%; /* Make the image responsive */
+            max-width: 800px; /* Set a max-width for large screens */
+            display: block;
+            margin: 0 auto; /* Center the image */
+        }
 
-        <!-- Hero Section (Hello) -->
-        <section id="hello" class="hero">
-            <div class="hero-content">
-                <h1>How much candy will you get?</h1>
-                <!-- Zip code form and result moved under the title -->
-                <form id="zipcode-form">
-                    <label for="zipcode-input">Zip code:</label>
-                    <input type="text" id="zipcode-input" name="zipcode" required />
-                    <button type="submit">Submit</button>
-                </form>
-                <p id="result"></p> <!-- Display result here -->
-            </div>
-        </section>
+        /* Navbar Styling */
+        .navbar {
+            background-color: #6b5b95;
+            padding: 10px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
 
-        <!-- Features Section (Map) -->
-        <section id="Map" class="features">
-            <h2>Trick or Treat Desirability Map</h2>
-            <!-- Add your image below the heading -->
-            <img src="https://raw.githubusercontent.com/eric1855/IdkWhereToTrickorTreatinLVr.github.io/refs/heads/main/Desirability%20Index.png" alt="Desirability Index" class="map-image" />
-        </section>
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-        <!-- About Section (We are) -->
-        <section id="we-are" class="about">
-            <div class="about-content">
-                <div class="about-item">Eric</div>
-                <div class="about-item">Aileen</div>
-                <div class="about-item">Jackson</div>
-            </div>
-        </section>
+        .navbar .nav-links {
+            list-style-type: none;
+            float: right;
+        }
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Hackoween. All rights reserved.</p>
-        </footer>
+        .navbar .nav-links li {
+            display: inline-block;
+            margin: 0 20px;
+        }
 
-        <script src="script.js"></script>
-    </body>
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #ff7b25;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 70px; /* To avoid overlap with fixed navbar */
+        }
+
+        .hero h1 {
+            font-family: 'Creepster', cursive; /* Use the other custom font */
+            font-size: 36px;
+            color: #333;
+        }
+
+        .hero label {
+            font-size: 22px;  /* Larger font for labels */
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .hero input, .hero button {
+            font-size: 20px;  /* Larger font for input fields and button */
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .hero button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .hero button:hover {
+            background-color: #45a049;
+        }
+
+        .hero p {
+            font-size: 24px;  /* Larger font for result and candy total */
+            font-weight: bold;
+        }
+
+        .hero p#result {
+            margin-top: 20px;
+        }
+
+        .hero p#total-candy {
+            margin-top: 20px;
+        }
+
+        /* Features Section (Map) */
+        .features {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        /* About Section (We are) */
+        .about {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+        }
+
+        .about .about-content {
+            display: flex;
+            justify-content: space-around;
+            font-size: 24px;
+        }
+
+        .about .about-item {
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Candy Haul Predictor</div>
+        <ul class="nav-links">
+            <li><a href="#hello">Home</a></li>
+            <li><a href="#Map">Map</a></li>
+            <li><a href="#we-are">We Are</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section (Hello) -->
+    <section id="hello" class="hero">
+        <div class="hero-content">
+            <h1>How much candy will you get?</h1>
+            <!-- Zip code form and result moved under the title -->
+            <form id="zipcode-form">
+                <label for="zipcode-input">Zip code:</label>
+                <input type="text" id="zipcode-input" name="zipcode" required />
+                
+                <label for="start-time">Start Time:</label>
+                <input type="time" id="start-time" required />
+                
+                <label for="end-time">End Time:</label>
+                <input type="time" id="end-time" required />
+                
+                <button type="submit">Submit</button>
+            </form>
+            <p id="result"></p> <!-- Display result here -->
+            <p id="total-candy"></p> <!-- Display total candy here -->
+        </div>
+    </section>
+
+    <!-- Features Section (Map) -->
+    <section id="Map" class="features">
+        <h2>Trick or Treat Desirability Map</h2>
+        <!-- Add your image below the heading -->
+        <img src="https://raw.githubusercontent.com/eric1855/IdkWhereToTrickorTreatinLVr.github.io/refs/heads/main/Desirability%20Index.png" alt="Desirability Index" class="map-image" />
+    </section>
+
+    <!-- About Section (We are) -->
+    <section id="we-are" class="about">
+        <div class="about-content">
+            <div class="about-item">Eric</div>
+            <div class="about-item">Aileen</div>
+            <div class="about-item">Jackson</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hackoween. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
