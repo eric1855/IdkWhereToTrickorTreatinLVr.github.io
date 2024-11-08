@@ -45,12 +45,19 @@ async function getCandyHaul(zipCode, startTime, endTime) {
             const firstColumn = candyItems.slice(0, halfLength);
             const secondColumn = candyItems.slice(halfLength);
 
-            // Create HTML elements for displaying the candy haul in two columns
+            // Apply CSS for layout
             const candyListContainer = document.getElementById('result');
             candyListContainer.innerHTML = ""; // Clear previous content
 
+            // Add background color style to the body
+            document.body.style.backgroundColor = "#f1f1f1";  // Restoring original background color
+
+            // Create and style the columns
             const firstColumnList = document.createElement('div');
             firstColumnList.classList.add('candy-column');
+            firstColumnList.style.width = "45%";  // 45% width for first column
+            firstColumnList.style.display = "inline-block";  // Display columns inline
+
             firstColumn.forEach(([candy, amount]) => {
                 const candyItem = document.createElement('div');
                 candyItem.classList.add('candy-item');
@@ -60,6 +67,9 @@ async function getCandyHaul(zipCode, startTime, endTime) {
 
             const secondColumnList = document.createElement('div');
             secondColumnList.classList.add('candy-column');
+            secondColumnList.style.width = "45%";  // 45% width for second column
+            secondColumnList.style.display = "inline-block";  // Display columns inline
+
             secondColumn.forEach(([candy, amount]) => {
                 const candyItem = document.createElement('div');
                 candyItem.classList.add('candy-item');
@@ -70,6 +80,17 @@ async function getCandyHaul(zipCode, startTime, endTime) {
             // Append both columns to the result container
             candyListContainer.appendChild(firstColumnList);
             candyListContainer.appendChild(secondColumnList);
+
+            // Add styles for candy items
+            const candyItemsStyle = document.createElement('style');
+            candyItemsStyle.innerHTML = `
+                .candy-item {
+                    margin: 5px 0;
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+            `;
+            document.head.appendChild(candyItemsStyle);
 
             // Display the total candy amount
             document.getElementById('total-candy').innerText = `Total Candy: ${totalCandy}`;
