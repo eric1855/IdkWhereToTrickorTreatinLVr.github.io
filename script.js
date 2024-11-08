@@ -23,7 +23,7 @@ async function getCandyHaul(zipCode, startTime, endTime) {
 
         // Check if the response is successful
         if (!response.ok) {
-            throw new Error(`Error ${response.status}: Failed to fetch data from API`);
+            throw new Error(`Error ${response.status}: broski you filled something in wrong, maybe your zip code doesn't exist for your trick-or-treat times don't make sense`);
         }
 
         // Parse the JSON response
