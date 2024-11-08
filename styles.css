@@ -71,7 +71,7 @@ body {
 
 /* New Styles for Zip Code, User Input, and Results Display */
 .hero form input, .hero form button {
-    font-family: Arial, sans-serif; /* Font for input fields and button */
+    font-family: "Funnel Display", sans-serif; /* Font for input fields and button */
     font-size: 1.5rem; /* Bigger font size for better visibility */
     padding: 10px;
     margin: 10px 0;
@@ -83,7 +83,7 @@ body {
 }
 
 .hero form button {
-    background-color: #ff7b25;
+    background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
@@ -92,7 +92,7 @@ body {
 }
 
 .hero form button:hover {
-    background-color: #e86b1c;
+    background-color: #45a049;
 }
 
 /* Display Results */
@@ -100,7 +100,7 @@ body {
     font-family: Arial, sans-serif; /* Font for result text */
     font-size: 2rem; /* Bigger font size for results */
     margin-top: 20px;
-    color: black;
+    color: white;
 }
 
 /* Candy list split into two columns */
