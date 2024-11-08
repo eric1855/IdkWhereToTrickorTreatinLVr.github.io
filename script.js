@@ -6,7 +6,7 @@ async function getCandyHaul(zipCode, startTime, endTime) {
         const period = hours >= 12 ? 'PM' : 'AM';
         if (hours > 12) hours -= 12;
         if (hours === 0) hours = 12;  // Handle midnight (00:00) as 12 AM
-        return `${hours}:${minute} ${period}`;
+        return `${hours}:${minute}${period}`;
     }
 
     // Convert both start and end times
@@ -14,7 +14,7 @@ async function getCandyHaul(zipCode, startTime, endTime) {
     const endTime12hr = convertTo12HourFormat(endTime);
 
     // API URL with zip code, start time, and end time as query parameters
-    const apiUrl = `https://nonmdwp4vf.execute-api.us-west-1.amazonaws.com/stageone/haul?zip_code=${zipCode}&start_time=${"3:00PM"}&end_time=${"5:00PM"}`;
+    const apiUrl = `https://nonmdwp4vf.execute-api.us-west-1.amazonaws.com/stageone/haul?zip_code=${zipCode}&start_time=${"startTime12hr"}&end_time=${"endTime12hr"}`;
 
     try {
         // Send the request to the API Gateway
