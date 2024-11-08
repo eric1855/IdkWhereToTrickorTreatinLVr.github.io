@@ -50,8 +50,8 @@ async function getCandyHaul(zipCode, startTime, endTime) {
             // Display the total candy amount
             document.getElementById('total-candy').innerText = `Total Candy: ${totalCandy}`;
         } else if (data.error) {
-            // Handle specific API error responses
-            document.getElementById('result').innerText = `Error: ${data.error}`;
+            // Display error code and message from the API
+            document.getElementById('result').innerText = `Error ${response.status}: ${data.error}`;
             document.getElementById('total-candy').innerText = '';
         }
     } catch (error) {
