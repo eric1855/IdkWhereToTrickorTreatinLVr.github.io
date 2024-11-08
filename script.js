@@ -31,8 +31,15 @@ async function getCandyHaul(zipCode, startTime, endTime) {
         // Check if the predicted_haul is present in the response
         if (data.predicted_haul) {
             const predictedHaul = data.predicted_haul;
-            // Display the predicted candy haul on the website
-            document.getElementById('result').innerText = `Estimated Candy Haul: ${predictedHaul}`;
+
+            // Create a string to display the candy breakdown
+            let candyDisplay = "Estimated Candy Haul:\n";
+            for (const [candy, amount] of Object.entries(predictedHaul)) {
+                candyDisplay += `${candy}: ${amount} pieces\n`;
+            }
+
+            // Display the predicted candy haul breakdown on the website
+            document.getElementById('result').innerText = candyDisplay;
         } else if (data.error) {
             // Handle specific API error responses
             document.getElementById('result').innerText = `Error: ${data.error}`;
