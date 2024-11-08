@@ -15,6 +15,7 @@
         /* Remove horizontal scroll */
         body {
             overflow-x: hidden;
+            font-family: 'Funnel Display', sans-serif;  /* Use the custom font */
         }
 
         /* Optional styling for the image */
@@ -23,6 +24,130 @@
             max-width: 800px; /* Set a max-width for large screens */
             display: block;
             margin: 0 auto; /* Center the image */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            list-style-type: none;
+            float: right;
+        }
+
+        .navbar .nav-links li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #f4f4f4;
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 70px; /* To avoid overlap with fixed navbar */
+        }
+
+        .hero h1 {
+            font-family: 'Creepster', cursive; /* Use the other custom font */
+            font-size: 36px;
+            color: #333;
+        }
+
+        .hero label {
+            font-size: 22px;  /* Larger font for labels */
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .hero input, .hero button {
+            font-size: 20px;  /* Larger font for input fields and button */
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .hero button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .hero button:hover {
+            background-color: #45a049;
+        }
+
+        .hero p {
+            font-size: 24px;  /* Larger font for result and candy total */
+            font-weight: bold;
+        }
+
+        .hero p#result {
+            margin-top: 20px;
+        }
+
+        .hero p#total-candy {
+            margin-top: 20px;
+        }
+
+        /* Features Section (Map) */
+        .features {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        /* About Section (We are) */
+        .about {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+        }
+
+        .about .about-content {
+            display: flex;
+            justify-content: space-around;
+            font-size: 24px;
+        }
+
+        .about .about-item {
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
