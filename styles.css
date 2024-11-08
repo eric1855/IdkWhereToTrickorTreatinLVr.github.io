@@ -13,6 +13,16 @@ body {
     font-family: "Creepster", serif; /* Default font for body text */
 }
 
+/* Optional styling for the candy list columns */
+.candy-column {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.candy-item {
+    margin: 10px 0;
+}
+
 /* Navigation Bar */
 .navbar {
     position: fixed;
