@@ -1,6 +1,6 @@
-async function getCandyHaul(zipCode) {
-    // API URL with zip code as query parameter
-    const apiUrl = `https://nonmdwp4vf.execute-api.us-west-1.amazonaws.com/stageone/haul?zip_code=${zipCode}`;
+async function getCandyHaul(zipCode, startTime, endTime) {
+    // API URL with zip code, start time, and end time as query parameters
+    const apiUrl = `https://nonmdwp4vf.execute-api.us-west-1.amazonaws.com/stageone/haul?zip_code=${zipCode}&start_time=${startTime}&end_time=${endTime}`;
 
     try {
         // Send the request to the API Gateway
@@ -29,15 +29,17 @@ async function getCandyHaul(zipCode) {
 document.getElementById('zipcode-form').addEventListener('submit', async (event) => {
     event.preventDefault();  // Prevent the form from submitting normally
 
-    // Get the zip code entered by the user
+    // Get the zip code, start time, and end time entered by the user
     const zipCode = document.getElementById('zipcode-input').value;
+    const startTime = document.getElementById('start-time').value;
+    const endTime = document.getElementById('end-time').value;
 
-    // Check if the zip code is valid
-    if (!zipCode) {
-        document.getElementById('result').innerText = 'Error: Zip code is required';
+    // Check if all fields are filled out
+    if (!zipCode || !startTime || !endTime) {
+        document.getElementById('result').innerText = 'Error: All fields are required';
         return;
     }
 
     // Call the function to get the candy haul prediction
-    await getCandyHaul(zipCode);
+    await getCandyHaul(zipCode, startTime, endTime);
 });
