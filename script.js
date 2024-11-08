@@ -35,7 +35,7 @@ async function getCandyHaul(zipCode, startTime, endTime) {
             // Create a string to display the candy breakdown
             let candyDisplay = "Estimated Candy Haul:\n";
             for (const [candy, amount] of Object.entries(predictedHaul)) {
-                candyDisplay += `${candy}: ${amount} pieces\n`;
+                candyDisplay += `${candy}: ${amount} \n`;
             }
 
             // Display the predicted candy haul breakdown on the website
