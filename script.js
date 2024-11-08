@@ -49,9 +49,6 @@ async function getCandyHaul(zipCode, startTime, endTime) {
             const candyListContainer = document.getElementById('result');
             candyListContainer.innerHTML = ""; // Clear previous content
 
-            // Add background color style to the body
-            document.body.style.backgroundColor = "#f1f1f1";  // Restoring original background color
-
             // Create and style the columns
             const firstColumnList = document.createElement('div');
             firstColumnList.classList.add('candy-column');
