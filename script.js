@@ -1,6 +1,20 @@
 async function getCandyHaul(zipCode, startTime, endTime) {
+    // Convert 24-hour format to 12-hour format with AM/PM
+    function convertTo12HourFormat(time) {
+        const [hour, minute] = time.split(':');
+        let hours = parseInt(hour);
+        const period = hours >= 12 ? 'PM' : 'AM';
+        if (hours > 12) hours -= 12;
+        if (hours === 0) hours = 12;  // Handle midnight (00:00) as 12 AM
+        return `${hours}:${minute} ${period}`;
+    }
+
+    // Convert both start and end times
+    const startTime12hr = convertTo12HourFormat(startTime);
+    const endTime12hr = convertTo12HourFormat(endTime);
+
     // API URL with zip code, start time, and end time as query parameters
-    const apiUrl = `https://nonmdwp4vf.execute-api.us-west-1.amazonaws.com/stageone/haul?zip_code=${zipCode}&start_time=${startTime}&end_time=${endTime}`;
+    const apiUrl = `https://nonmdwp4vf.execute-api.us-west-1.amazonaws.com/stageone/haul?zip_code=${zipCode}&start_time=${startTime12hr}&end_time=${endTime12hr}`;
 
     try {
         // Send the request to the API Gateway
@@ -41,13 +55,6 @@ document.getElementById('zipcode-form').addEventListener('submit', async (event)
     // Check if all fields are filled out
     if (!zipCode || !startTime || !endTime) {
         document.getElementById('result').innerText = 'Error: All fields are required';
-        return;
-    }
-
-    // Validate the time format (HH:MM AM/PM)
-    const timePattern = /^(0?[1-9]|1[0-2]):([0-5]?[0-9])\s?(AM|PM)$/;
-    if (!timePattern.test(startTime) || !timePattern.test(endTime)) {
-        document.getElementById('result').innerText = 'Error: Invalid time format. Please use HH:MM AM/PM format';
         return;
     }
 
