@@ -24,6 +24,29 @@
                 display: block;
                 margin: 0 auto; /* Center the image */
             }
+
+            /* Style for the candy haul breakdown */
+            .candy-haul {
+                font-family: 'Creepster', cursive;
+                font-size: 18px;
+                margin-top: 20px;
+                line-height: 1.5;
+            }
+
+            .candy-haul h2 {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+
+            .candy-haul ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .candy-haul li {
+                font-size: 18px;
+                margin: 5px 0;
+            }
         </style>
     </head>
     <body>
@@ -54,7 +77,13 @@
                     
                     <button type="submit">Submit</button>
                 </form>
+                
                 <p id="result"></p> <!-- Display result here -->
+                
+                <!-- Section for displaying detailed candy haul -->
+                <div id="candy-haul" class="candy-haul">
+                    <!-- This will be populated dynamically -->
+                </div>
             </div>
         </section>
 
