@@ -15,12 +15,16 @@ async function getCandyHaul(zipCode, startTime, endTime) {
         const data = await response.json();
 
         // Check if the predicted_haul is present in the response
-        const predictedHaul = data.predicted_haul;
-
-        // Display the predicted candy haul on the website
-        document.getElementById('result').innerText = `Estimated Candy Haul: ${predictedHaul}`;
+        if (data.predicted_haul) {
+            const predictedHaul = data.predicted_haul;
+            // Display the predicted candy haul on the website
+            document.getElementById('result').innerText = `Estimated Candy Haul: ${predictedHaul}`;
+        } else if (data.error) {
+            // Handle specific API error responses
+            document.getElementById('result').innerText = `Error: ${data.error}`;
+        }
     } catch (error) {
-        // Handle errors, display a message
+        // Handle any unexpected errors
         document.getElementById('result').innerText = `Error: ${error.message}`;
     }
 }
@@ -37,6 +41,13 @@ document.getElementById('zipcode-form').addEventListener('submit', async (event)
     // Check if all fields are filled out
     if (!zipCode || !startTime || !endTime) {
         document.getElementById('result').innerText = 'Error: All fields are required';
+        return;
+    }
+
+    // Validate the time format (HH:MM AM/PM)
+    const timePattern = /^(0?[1-9]|1[0-2]):([0-5]?[0-9])\s?(AM|PM)$/;
+    if (!timePattern.test(startTime) || !timePattern.test(endTime)) {
+        document.getElementById('result').innerText = 'Error: Invalid time format. Please use HH:MM AM/PM format';
         return;
     }
 
