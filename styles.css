@@ -103,60 +103,6 @@ body {
     color: black;
 }
 
-/* Features Section (Map) */
-.features {
-    padding: 100px 20px; /* Add horizontal padding */
-    background-color: #f4e1d2;
-    text-align: center;
-    width: 100%;
-    font-family: "Funnel Display", sans-serif; /* Font for feature section */
-}
-
-.features h2 {
-    font-family: "Funnel Display", sans-serif; /* Font for feature section title */
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.map-image {
-    width: 100%;
-    max-width: 800px;
-    display: block;
-    margin: 20px auto; /* Center the image */
-}
-
-/* About Section (We are) */
-.about {
-    padding: 100px 20px; /* Add padding on left and right */
-    background-color: #36486b;
-    color: white;
-    width: 100%;
-    font-family: "Funnel Display", sans-serif; /* Font for about section */
-}
-
-.about-content {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-}
-
-.about-item {
-    width: 200px;
-    background-color: #1f293e;
-    padding: 20px;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #1f293e;
-    color: white;
-    font-family: "Funnel Display", sans-serif; /* Font for footer */
-}
-
 /* Candy list split into two columns */
 .candy-list {
     display: flex;
@@ -184,4 +130,14 @@ footer {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+
+/* Mobile Responsiveness - Stack the columns on small screens */
+@media (max-width: 768px) {
+    .candy-item {
+        flex: 1 0 100%;  /* Make items take up 100% width on small screens */
+    }
+    .candy-list {
+        justify-content: center;  /* Center the items for better alignment */
+    }
 }
