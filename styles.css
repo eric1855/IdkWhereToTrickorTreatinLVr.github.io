@@ -157,6 +157,22 @@ footer {
     font-family: "Funnel Display", sans-serif; /* Font for footer */
 }
 
+/* Candy list split into two columns */
+.candy-list {
+    display: flex;
+    flex-wrap: wrap;  /* Allow items to wrap onto the next line */
+    justify-content: space-between;  /* Space between the columns */
+    gap: 20px;  /* Optional gap between columns */
+    margin-top: 20px;
+}
+
+.candy-item {
+    flex: 1 0 45%;  /* Each item will take up 45% of the width */
+    box-sizing: border-box;
+    font-size: 18px;
+    text-align: left;
+}
+
 .creepster-regular {
     font-family: "Creepster", serif;
     font-weight: 400;
