@@ -32,14 +32,23 @@ async function getCandyHaul(zipCode, startTime, endTime) {
         if (data.predicted_haul) {
             const predictedHaul = data.predicted_haul;
 
+            // Calculate the total candy haul
+            let totalCandy = 0;
+            for (const amount of Object.values(predictedHaul)) {
+                totalCandy += amount;
+            }
+
             // Create a string to display the candy breakdown
             let candyDisplay = "Estimated Candy Haul:\n";
             for (const [candy, amount] of Object.entries(predictedHaul)) {
-                candyDisplay += `${candy}: ${amount} \n`;
+                candyDisplay += `${candy}: ${amount}\n`;
             }
 
-            // Display the predicted candy haul breakdown on the website
+            // Display the candy haul breakdown and the total candy on the website
             document.getElementById('result').innerText = candyDisplay;
+
+            // Display the total candy amount
+            document.getElementById('total-candy').innerText = `Total Candy: ${totalCandy}`;
         } else if (data.error) {
             // Handle specific API error responses
             document.getElementById('result').innerText = `Error: ${data.error}`;
