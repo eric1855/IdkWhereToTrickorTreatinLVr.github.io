@@ -5,7 +5,7 @@ async function getCandyHaul(zipCode) {
     try {
         // Send the request to the API Gateway
         const response = await fetch(apiUrl);
-        
+
         // Check if the response is successful
         if (!response.ok) {
             throw new Error('Failed to fetch data from API');
@@ -31,6 +31,12 @@ document.getElementById('zipcode-form').addEventListener('submit', async (event)
 
     // Get the zip code entered by the user
     const zipCode = document.getElementById('zipcode-input').value;
+
+    // Check if the zip code is valid
+    if (!zipCode) {
+        document.getElementById('result').innerText = 'Error: Zip code is required';
+        return;
+    }
 
     // Call the function to get the candy haul prediction
     await getCandyHaul(zipCode);
