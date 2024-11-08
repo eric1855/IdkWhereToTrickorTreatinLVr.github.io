@@ -69,6 +69,40 @@ body {
     margin-top: 20px; /* Space between title and form */
 }
 
+/* New Styles for Zip Code, User Input, and Results Display */
+.hero form input, .hero form button {
+    font-family: Arial, sans-serif; /* Font for input fields and button */
+    font-size: 1.5rem; /* Bigger font size for better visibility */
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.hero form input {
+    width: 100%;
+    max-width: 300px;
+}
+
+.hero form button {
+    background-color: #ff7b25;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+}
+
+.hero form button:hover {
+    background-color: #e86b1c;
+}
+
+/* Display Results */
+#result, #total-candy {
+    font-family: Arial, sans-serif; /* Font for result text */
+    font-size: 2rem; /* Bigger font size for results */
+    margin-top: 20px;
+    color: black;
+}
+
 /* Features Section (Map) */
 .features {
     padding: 100px 20px; /* Add horizontal padding */
