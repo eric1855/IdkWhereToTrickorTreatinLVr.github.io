@@ -1,1 +1,1 @@
-# 2024 Clark CS Club Hackathon, Las Vegas Candy predictor serverless web development using AWS.
+# 2024 Clark Hackathon, US Candy predictor serverless web development using AWS.
